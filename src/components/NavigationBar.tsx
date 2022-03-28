@@ -28,9 +28,7 @@ const Brand = styled.span`
   }
 
   @media (max-width: 768px) {
-    #brand {
-      margin-left: 24px;
-    }
+    margin-left: 24px;
   }
 `;
 
@@ -63,20 +61,12 @@ const Menu = styled.ul`
   }
 
   @media (max-width: 768px) {
-    #menu a {
+    a {
       font-size: 20px;
       font-weight: 300;
     }
 
-    nav #menu {
-      display: none;
-    }
-  }
-
-  @media (min-width: 768px) {
-    #resize {
-      visibility: hidden !important;
-    }
+    display: none;
   }
 `;
 
@@ -96,12 +86,10 @@ const Toggle = styled.div`
   opacity: 0;
 
   @media (max-width: 768px) {
-    #toggle {
-      visibility: visible;
-      opacity: 1;
-      margin-top: 6px;
-      margin-right: 4px;
-    }
+    visibility: visible;
+    opacity: 1;
+    margin-top: 6px;
+    margin-right: 4px;
   }
 `;
 
@@ -117,7 +105,7 @@ const Resize = styled.div`
   opacity: 0;
   transition: all 1s ease-out;
 
-  #menu {
+  #menu-mobile {
     height: 90px;
     position: absolute;
     left: 45%;
@@ -127,11 +115,11 @@ const Resize = styled.div`
     vertical-align: center;
   }
 
-  #menu li {
+  #menu-mobile li {
     display: block;
     text-align: center;
     padding: 10px 0;
-    font-size: 50px;
+    font-size: 500px;
     min-height: 50px;
     font-weight: bold;
     cursor: pointer;
@@ -142,11 +130,11 @@ const Resize = styled.div`
     margin-top: 140px;
   }
 
-  #menu li a {
+  #menu-mobile li a {
     color: #fff;
   }
 
-  #menu li a:hover {
+  #menu-mobile li a:hover {
     text-decoration: none;
   }
 
@@ -156,15 +144,13 @@ const Resize = styled.div`
   }
 
   @media (max-width: 768px) {
-    #resize li span {
+    li span {
       font-weight: bolder;
     }
   }
 
   @media (min-width: 768px) {
-    #resize {
-      visibility: hidden !important;
-    }
+    visibility: hidden !important;
   }
 
   .close-btn {
@@ -221,7 +207,7 @@ export const NavigationBar: React.FC = () => {
       <Resize id="resize">
         <div className="close-btn">close</div>
 
-        <ul id="menu">
+        <ul id="menu-mobile">
           <li>
             <a href="#">
               home<span>.</span>
