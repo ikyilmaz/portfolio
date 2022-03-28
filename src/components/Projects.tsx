@@ -20,7 +20,7 @@ export const Projects: React.FC = () => {
 
         <div
           className="col-lg-4 project project1 wow fadeInUp"
-          onClick={() => (location.href = "project.html")}
+          //   onClick={() => (location.href = "project.html")}
         ></div>
       </div>
 
@@ -29,7 +29,7 @@ export const Projects: React.FC = () => {
       <div className="row">
         <div
           className="col-lg-6 project project2 wow fadeInUp"
-          onClick={() => (location.href = "project.html")}
+          //   onClick={() => (location.href = "project.html")}
         ></div>
 
         <div className="col-lg-6"></div>
@@ -42,7 +42,7 @@ export const Projects: React.FC = () => {
 
         <div
           className="col-lg-4 project project3 wow fadeInUp"
-          onClick={() => (location.href = "project.html")}
+          //   onClick={() => (location.href = "project.html")}
         ></div>
 
         <div className="col-lg-1"></div>
@@ -55,7 +55,7 @@ export const Projects: React.FC = () => {
 
         <div
           className="col-lg-5 project project4 wow fadeInUp"
-          onClick={() => (location.href = "project.html")}
+          //   onClick={() => (location.href = "project.html")}
         ></div>
 
         <div className="col-lg-6"></div>
