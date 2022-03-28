@@ -10,11 +10,27 @@ import { Footer } from "./components/Footer";
 const Wrapper = styled.div``;
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0px;
-    padding 0px;
-    box-sizing: content-box !important;
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Roboto Mono" !important;
+    background: #0f0f0f !important;
+    color: #fff !important;
   }
+
+  .whitespace {
+    width: 100%;
+    height: 100px;
+  }
+
+  @media(max-width: 768px) {
+    .whitespace {
+          display: none;
+    }
+  }
+
 `;
 
 function App() {
