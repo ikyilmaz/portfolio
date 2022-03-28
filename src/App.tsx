@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import styled, { createGlobalStyle } from "styled-components";
 import { NavigationBar } from "./components/NavigationBar";
 import { Hero } from "./components/Hero";
+import { Projects } from "./components/Projects";
 
 const Wrapper = styled.div``;
 
@@ -22,6 +23,7 @@ function App() {
       <Wrapper>
         <NavigationBar />
         <Hero />
+        <Projects />
       </Wrapper>
     </React.Fragment>
   );
