@@ -64,7 +64,39 @@ const Line = styled.h1`
     }
   }
 `;
-const ScrollDown = styled.div``;
+
+const fadeMoveDown = keyframes`
+        0% {
+      transform: translate(0, -20px) rotate(45deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(0, 20px) rotate(45deg);
+      opacity: 0;
+    }
+`;
+
+const ScrollDown = styled.div`
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  z-index: 0;
+  text-decoration: none;
+  text-shadow: 0;
+  width: 13px;
+  height: 13px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: translate(-50%, 0) rotate(45deg);
+  -webkit-transform: translate(-50%, 0) rotate(45deg);
+  animation: ${fadeMoveDown} 3s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+`;
 
 export const Hero: React.FC = () => {
   return (
