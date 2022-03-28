@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import styled, { createGlobalStyle } from "styled-components";
 import { NavigationBar } from "./components/NavigationBar";
