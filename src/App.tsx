@@ -5,6 +5,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { NavigationBar } from "./components/NavigationBar";
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
+import { Footer } from "./components/Footer";
 
 const Wrapper = styled.div``;
 
@@ -24,6 +25,7 @@ function App() {
         <NavigationBar />
         <Hero />
         <Projects />
+        <Footer />
       </Wrapper>
     </React.Fragment>
   );
