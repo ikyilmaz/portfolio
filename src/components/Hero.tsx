@@ -17,7 +17,7 @@ const HeroWrapper = styled.div`
 
   @media (max-width: 768px) {
     .header h1 {
-      font-size: 26px;
+      font-size: 22px;
     }
   }
 `;
@@ -47,7 +47,7 @@ const blinkTextCursor = keyframes`
 
 // ekranın ortasında gözükecek olan yazı
 const Line = styled.h1`
-  width: 24em;
+  width: 22em;
   top: 50%;
   margin: auto;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
