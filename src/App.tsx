@@ -6,6 +6,7 @@ import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
 import { Footer } from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
 
 const Wrapper = styled.div``;
 
@@ -40,17 +41,7 @@ function App() {
         <GlobalStyle />
 
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Wrapper>
-                <NavigationBar />
-                <Hero />
-                <Projects />
-                <Footer />
-              </Wrapper>
-            }
-          />
+          <Route path="/" element={<HomePage />} />
           <Route path="/work" element={<h3>iş.</h3>} />
           <Route path="/about-me" element={<h3>benden biraz.</h3>} />
           <Route path="/contact" element={<h3>iletişim.</h3>} />
