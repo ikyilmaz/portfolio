@@ -4,6 +4,7 @@ import styled from "styled-components";
 //Navigasyon Barım
 const MyNav = styled.nav`
   width: 100%;
+  border-bottom: 1px solid white;
   background: #0f0f0f;
   height: 80px;
   position: fixed;
@@ -17,6 +18,7 @@ const Brand = styled.span`
   margin-left: 82px;
   line-height: 80px;
   font-weight: bold;
+  font-size: 22px;
 
   a {
     color: #fff;
@@ -39,7 +41,7 @@ const Menu = styled.ul`
   position: fixed;
 
   li {
-    padding-left: 40px;
+    padding-left: 80px;
     display: inline-block;
     cursor: pointer;
     font-weight: 300;
@@ -54,10 +56,8 @@ const Menu = styled.ul`
 
   li a {
     color: #fff;
-  }
-
-  li a:hover {
     text-decoration: none;
+    font-size: 26px;
   }
 
   @media (max-width: 768px) {
@@ -169,7 +169,7 @@ export const NavigationBar: React.FC = () => {
     <MyNav id="nav">
       {/* Adım burada olacak */}
       <Brand id="brand">
-        <a>ismail</a>
+        <a>ismail kurban yilmaz</a>
       </Brand>
       {/* Adım burada olacak */}
 
