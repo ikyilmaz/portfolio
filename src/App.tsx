@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import styled, { createGlobalStyle } from "styled-components";
-import { NavigationBar } from "./components/NavigationBar";
+import { NavigationBar } from "./components/NavigationBar/NavigationBar";
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
 import { Footer } from "./components/Footer";
