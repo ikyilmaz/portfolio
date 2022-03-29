@@ -5,6 +5,7 @@ import { NavigationBar } from "./components/NavigationBar";
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
 import { Footer } from "./components/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const Wrapper = styled.div``;
 
@@ -35,13 +36,26 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <React.Fragment>
-      <GlobalStyle />
-      <Wrapper>
-        <NavigationBar />
-        <Hero />
-        <Projects />
-        <Footer />
-      </Wrapper>
+      <Router>
+        <GlobalStyle />
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Wrapper>
+                <NavigationBar />
+                <Hero />
+                <Projects />
+                <Footer />
+              </Wrapper>
+            }
+          />
+          <Route path="/work" element={<h3>iş.</h3>} />
+          <Route path="/about-me" element={<h3>benden biraz.</h3>} />
+          <Route path="/contact" element={<h3>iletişim.</h3>} />
+        </Routes>
+      </Router>
     </React.Fragment>
   );
 }
