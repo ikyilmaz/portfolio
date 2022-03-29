@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Routes, Route, Link } from "react-router-dom";
 
 //Navigasyon Barım
 const MyNav = styled.nav`
@@ -9,6 +10,11 @@ const MyNav = styled.nav`
   height: 80px;
   position: fixed;
   z-index: 1;
+
+  .active {
+    visibility: visible;
+    opacity: 1;
+  }
 `;
 
 // Adımın gözükeceği yer marka logosu gibi
@@ -77,24 +83,32 @@ const Menu = styled.ul`
 
 // Mobil için toggle butonu
 const Toggle = styled.div`
-  position: absolute;
-  right: 30px;
-  top: 20px;
-  font-weight: 300;
-  z-index: 2;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  float: right;
-  transition: all 0.3s ease-out;
-  visibility: hidden;
-  opacity: 0;
+  .span {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-weight: 300;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    float: right;
+    transition: all 0.3s ease-out;
+    visibility: hidden;
+    opacity: 0;
+  }
 
   @media (max-width: 768px) {
-    visibility: visible;
-    opacity: 1;
-    margin-top: 6px;
-    margin-right: 4px;
+    .span {
+      visibility: visible;
+      opacity: 1;
+      margin-top: 6px;
+      margin-right: 4px;
+    }
+
+    .hide {
+      visibility: hidden;
+    }
   }
 `;
 
@@ -124,7 +138,7 @@ const Resize = styled.div`
     display: block;
     text-align: center;
     padding: 10px 0;
-    font-size: 500px;
+    font-size: 50px;
     min-height: 50px;
     font-weight: bold;
     cursor: pointer;
@@ -170,6 +184,8 @@ const Resize = styled.div`
 `;
 
 export const NavigationBar: React.FC = () => {
+  const [toggle, setToggle] = React.useState<boolean>(false);
+  console.log("Toggle: ", toggle);
   return (
     <MyNav id="nav">
       {/* Adım burada olacak */}
@@ -181,57 +197,59 @@ export const NavigationBar: React.FC = () => {
       {/* Menü burası */}
       <Menu id="menu">
         <li>
-          <a href="#">
+          <Link to="/">
             anasayfa<span>.</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="/work">
             iş<span>.</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="/about-me">
             biraz benden<span>.</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="/contact">
             iletişim<span>.</span>
-          </a>
+          </Link>
         </li>
       </Menu>
       {/* Menü burası */}
 
       {/* Toggle butonu burası */}
-      <Toggle id="toggle">
-        <div className="span">menu</div>
+      <Toggle id="toggle" onClick={() => setToggle(true)}>
+        <div className={toggle ? "invisible span" : "span"}>menu</div>
       </Toggle>
       {/* Toggle butonu burası */}
 
-      <Resize id="resize">
-        <div className="close-btn">close</div>
+      <Resize id="resize" className={toggle ? "active" : ""}>
+        <div className="close-btn" onClick={() => setToggle(false)}>
+          close
+        </div>
 
         <ul id="menu-mobile">
           <li>
-            <a href="#">
-              home<span>.</span>
-            </a>
+            <Link to="/">
+              anasayfa<span>.</span>
+            </Link>
           </li>
           <li>
-            <a href="#">
-              work<span>.</span>
-            </a>
+            <Link to="/work">
+              iş<span>.</span>
+            </Link>
           </li>
           <li>
-            <a href="#">
-              about me<span>.</span>
-            </a>
+            <Link to="/about-me">
+              biraz benden<span>.</span>
+            </Link>
           </li>
           <li>
-            <a href="#">
-              contact<span>.</span>
-            </a>
+            <Link to="/contact">
+              iletişim<span>.</span>
+            </Link>
           </li>
         </ul>
       </Resize>
