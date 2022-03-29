@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
+// Hero Component
 const HeroWrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -20,8 +21,11 @@ const HeroWrapper = styled.div`
     }
   }
 `;
+
+// Header
 const Header = styled.div``;
 
+// Yazı yazma efekti veren animasyonum
 const typewriter = keyframes`
     from {
         width: 0;
@@ -31,7 +35,8 @@ const typewriter = keyframes`
     }
 `;
 
-const blinkTextCussor = keyframes`
+// işaretçinin yanıp sönme efekti
+const blinkTextCursor = keyframes`
     from {
       border-right-color: rgba(255, 255, 255, 0.75);
     }
@@ -40,6 +45,7 @@ const blinkTextCussor = keyframes`
     }
 `;
 
+// ekranın ortasında gözükecek olan yazı
 const Line = styled.h1`
   width: 24em;
   top: 50%;
@@ -51,7 +57,7 @@ const Line = styled.h1`
   transform: translateY(-50%);
 
   animation: ${typewriter} 4s steps(40) 1s 1 normal both,
-    blinkTextCussor 500ms steps(40) infinite normal;
+    ${blinkTextCursor} 500ms steps(40) infinite normal;
 
   @media (max-width: 768px) {
     @keyframes typewriter {
@@ -65,6 +71,7 @@ const Line = styled.h1`
   }
 `;
 
+// ScrollDown componentinin aşağı yukarı gelme efekti
 const fadeMoveDown = keyframes`
         0% {
       transform: translate(0, -20px) rotate(45deg);
@@ -79,6 +86,7 @@ const fadeMoveDown = keyframes`
     }
 `;
 
+// Aşağı ok
 const ScrollDown = styled.div`
   position: absolute;
   left: 50%;
@@ -104,7 +112,7 @@ export const Hero: React.FC = () => {
       <HeroWrapper className="hero">
         <Header className="header">
           <Line className="line anim-typewriter">
-            I make brands matter in culture.
+            Yazılımsal bi'şeyler yaparım
           </Line>
         </Header>
       </HeroWrapper>

@@ -48,6 +48,11 @@ const Menu = styled.ul`
     line-height: 80px;
     position: relative;
     transition: all 0.3s ease-out;
+    transition: transform 0.5s ease-out;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
   }
 
   li span {
@@ -169,7 +174,7 @@ export const NavigationBar: React.FC = () => {
     <MyNav id="nav">
       {/* Adım burada olacak */}
       <Brand id="brand">
-        <a>ismail kurban yilmaz</a>
+        <a>ismail kurban yılmaz</a>
       </Brand>
       {/* Adım burada olacak */}
 
@@ -177,22 +182,22 @@ export const NavigationBar: React.FC = () => {
       <Menu id="menu">
         <li>
           <a href="#">
-            home<span>.</span>
+            anasayfa<span>.</span>
           </a>
         </li>
         <li>
           <a href="#">
-            work<span>.</span>
+            iş<span>.</span>
           </a>
         </li>
         <li>
           <a href="#">
-            about me<span>.</span>
+            biraz benden<span>.</span>
           </a>
         </li>
         <li>
           <a href="#">
-            contact<span>.</span>
+            iletişim<span>.</span>
           </a>
         </li>
       </Menu>
