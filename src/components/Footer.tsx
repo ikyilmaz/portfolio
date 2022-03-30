@@ -117,11 +117,50 @@ export const Footer: React.FC = () => {
   const mailRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    landingFadeIn(quoteRef);
-    landingFadeIn(connectWithRef, 0.2);
-    landingFadeIn(usernameRef, 0.4);
-    landingFadeIn(followMeRef, 0.2);
+    // FIXME! Çok fazla tekrar eden bir kod yığını
 
+    // Buradaki her bir animasyon ilgili element viewporta girdiği an çalışacak...
+
+    // Proje soru kısmının giriş animasyonu...
+    gsap.from(quoteRef.current, {
+      scrollTrigger: quoteRef.current,
+      duration: 1,
+      transform: "translateX(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+    });
+
+    // İletişime geçelim kısmı
+    gsap.from(connectWithRef.current, {
+      scrollTrigger: connectWithRef.current,
+      duration: 1,
+      transform: "translateX(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+      delay: 0.2,
+    });
+
+    // Kullanıcı adı
+    gsap.from(usernameRef.current, {
+      scrollTrigger: usernameRef.current,
+      duration: 1,
+      transform: "translateX(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+      delay: 0.4,
+    });
+
+    // Takip edin
+    gsap.from(followMeRef.current, {
+      scrollTrigger: followMeRef.current,
+      duration: 1,
+      transform: "translateX(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+      delay: 0.2,
+    });
+
+    // Sosyal medya hesaplarımın linkleri
     gsap.from(socialFbRef.current, {
       scrollTrigger: socialFbRef.current,
       duration: 1,
@@ -154,8 +193,26 @@ export const Footer: React.FC = () => {
       ease: Cubic.easeInOut,
       delay: 0.8,
     });
-    landingFadeIn(sayHelloRef, 0.2);
-    landingFadeIn(mailRef, 0.4);
+
+    // Merhaba diyin
+    gsap.from(sayHelloRef.current, {
+      scrollTrigger: sayHelloRef.current,
+      duration: 1,
+      transform: "translateX(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+      delay: 0.2,
+    });
+
+    // E-Posta adresim
+    gsap.from(mailRef.current, {
+      scrollTrigger: mailRef.current,
+      duration: 1,
+      transform: "translateX(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+      delay: 0.4,
+    });
   });
 
   return (
