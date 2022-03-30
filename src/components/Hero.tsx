@@ -162,8 +162,6 @@ export const Hero: React.FC = () => {
       "Kesinlikle yazılımsal şeyler",
       "Full-Stack Web Developer",
     ];
-
-    texts.forEach(() => {});
     machineGun(texts, textRef);
   });
 
