@@ -2,6 +2,10 @@ import { gsap, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import nodejs from "../img/nodejs.jpg";
+import nestjs from "../img/nestjs.png";
+import reactjs from "../img/reactjs.png";
+import golang from "../img/golang.png";
 
 const Wrapper = styled.div`
   h6 {
@@ -21,13 +25,12 @@ const Wrapper = styled.div`
   }
 
   .project1 {
-    background: url(https://images.unsplash.com/photo-1540349220179-09d3866f2e74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2600&q=80)
-      no-repeat 50% 50%;
-    background-size: cover;
+    background: url(${nodejs}) no-repeat 50% 50%;
+    background-size: contain;
   }
 
   .project1::after {
-    content: "timeless flow.";
+    content: "NodeJS.";
     font-family: "Roboto Mono";
     font-size: 36px;
     position: relative;
@@ -40,13 +43,12 @@ const Wrapper = styled.div`
   }
 
   .project2 {
-    background: url(https://images.unsplash.com/photo-1468870045442-e7d799d8c98a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2448&q=80)
-      no-repeat 50% 50%;
-    background-size: cover;
+    background: url(${nestjs}) no-repeat 50% 50%;
+    background-size: contain;
   }
 
   .project2::after {
-    content: "foretime.";
+    content: "NestJS.";
     font-family: "Roboto Mono";
     font-size: 36px;
     position: relative;
@@ -59,13 +61,12 @@ const Wrapper = styled.div`
   }
 
   .project3 {
-    background: url(https://images.unsplash.com/photo-1482501157762-56897a411e05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)
-      no-repeat 50% 50%;
-    background-size: cover;
+    background: url(${reactjs}) no-repeat 50% 50%;
+    background-size: contain;
   }
 
   .project3::after {
-    content: "never again.";
+    content: "ReactJS.";
     font-family: "Roboto Mono";
     font-size: 36px;
     position: relative;
@@ -78,13 +79,12 @@ const Wrapper = styled.div`
   }
 
   .project4 {
-    background: url(https://images.unsplash.com/photo-1435685813800-51ba4ceb9c4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1785&q=80)
-      no-repeat 50% 50%;
-    background-size: cover;
+    background: url(${golang}) no-repeat 50% 50%;
+    background-size: contain;
   }
 
   .project4::after {
-    content: "departure.";
+    content: "Golang.";
     font-family: "Roboto Mono";
     font-size: 36px;
     position: relative;
