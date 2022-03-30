@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Routes, Route, Link } from "react-router-dom";
 import { Brand } from "./Brand";
 import { NavigationBarMenu } from "./NavigationBarMenu";
 import { NavigationBarToggle } from "./NavigationBarToggle";
@@ -22,6 +21,8 @@ const MyNav = styled.nav`
 `;
 
 export const NavigationBar: React.FC = () => {
+  const [toggle, setToggle] = useState(false);
+
   return (
     <MyNav>
       {/* Adım burada olacak */}
@@ -33,11 +34,11 @@ export const NavigationBar: React.FC = () => {
       {/* Menü burası */}
 
       {/* Toggle butonu burası */}
-      <NavigationBarToggle />
+      <NavigationBarToggle toggle={toggle} setToggle={setToggle} />
       {/* Toggle butonu burası */}
 
       {/* Mobil menü burası */}
-      <NavigationBarResize />
+      <NavigationBarResize toggle={toggle} setToggle={setToggle} />
       {/* Mobil menü burası */}
     </MyNav>
   );

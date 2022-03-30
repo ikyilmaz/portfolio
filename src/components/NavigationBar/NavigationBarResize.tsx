@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Resize = styled.div`
@@ -71,37 +72,43 @@ const Resize = styled.div`
   }
 `;
 
-export const NavigationBarResize: React.FC = () => {
-  return (
-    <>
-      {/* <Resize id="resize" className={toggle ? "active" : ""}>
-        <div className="close-btn" onClick={() => setToggle(false)}>
-          close
-        </div>
+export type NavigationBarResizeProps = {
+  setToggle: (value: boolean) => void;
+  toggle: boolean;
+};
 
-        <ul id="menu-mobile">
-          <li>
-            <Link to="/">
-              anasayfa<span>.</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/work">
-              iş<span>.</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/about-me">
-              biraz benden<span>.</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact">
-              iletişim<span>.</span>
-            </Link>
-          </li>
-        </ul>
-      </Resize> */}
-    </>
+export const NavigationBarResize: React.FC<NavigationBarResizeProps> = ({
+  setToggle,
+  toggle,
+}) => {
+  return (
+    <Resize id="resize" className={toggle ? "active" : ""}>
+      <div className="close-btn" onClick={() => setToggle(false)}>
+        close
+      </div>
+
+      <ul id="menu-mobile">
+        <li>
+          <Link to="/">
+            anasayfa<span>.</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/work">
+            iş<span>.</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/about-me">
+            biraz benden<span>.</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact">
+            iletişim<span>.</span>
+          </Link>
+        </li>
+      </ul>
+    </Resize>
   );
 };

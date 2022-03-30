@@ -28,16 +28,23 @@ const Toggle = styled.div`
 
     .hide {
       visibility: hidden;
+      opacity: 0;
     }
   }
 `;
 
-export const NavigationBarToggle: React.FC = () => {
+export type NavigationBarToggleProps = {
+  setToggle: (value: boolean) => void;
+  toggle: boolean;
+};
+
+export const NavigationBarToggle: React.FC<NavigationBarToggleProps> = ({
+  setToggle,
+  toggle,
+}) => {
   return (
-    <>
-      {/* <Toggle id="toggle" onClick={() => setToggle(true)}>
-         <div className={toggle ? "invisible span" : "span"}>menu</div>
-       </Toggle> */}
-    </>
+    <Toggle id="toggle" onClick={() => setToggle(true)}>
+      <div className={toggle ? "hide span" : "span"}>menu</div>
+    </Toggle>
   );
 };
