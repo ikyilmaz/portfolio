@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
+import { gsap } from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
 
 // Hero Component
 const HeroWrapper = styled.div`
@@ -106,14 +108,71 @@ const ScrollDown = styled.div`
   animation: ${fadeMoveDown} 3s cubic-bezier(0.19, 1, 0.22, 1) infinite;
 `;
 
+const LineDeneme = styled.h1`
+  width: 22em;
+  top: 50%;
+  margin: auto;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+`;
+
+const machineGun = (
+  texts: string[],
+  textRef: React.RefObject<HTMLHeadingElement>
+) => {
+  const tl = gsap.timeline({
+    // repeat: -1,
+    yoyo: false,
+    repeatDelay: 0,
+    defaults: {
+      onComplete: () => {
+        if (textRef.current) textRef.current.innerText = "";
+      },
+    },
+  });
+
+  texts.forEach((text, index) => {
+    tl.to(textRef.current, {
+      duration: text.length / 10,
+      text,
+      reversed: false,
+      onComplete() {
+        if ("Full-Stack Web Developer" === text) tl.pause();
+      },
+    }).to(textRef.current, {
+      duration: 1,
+      text,
+      reversed: true,
+    });
+  });
+};
+
 export const Hero: React.FC = () => {
+  const textRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(TextPlugin);
+    const texts = [
+      "Merhaba",
+      "Ben İsmail Kurban Yılmaz",
+      "Yazılımsal şeyler yaparım",
+      "Kesinlikle yazılımsal şeyler",
+      "Full-Stack Web Developer",
+    ];
+    machineGun(texts, textRef);
+  });
+
   return (
     <React.Fragment>
       <HeroWrapper className="hero">
         <Header className="header">
-          <Line className="line anim-typewriter">
-            Yazılımsal bi'şeyler yaparım
-          </Line>
+          {/* <Line className="line anim-typewriter">
+          </Line> */}
+          <LineDeneme ref={textRef} id="text">
+            {/* Yazılımsal şeyler yaparım */}
+          </LineDeneme>
         </Header>
       </HeroWrapper>
 
