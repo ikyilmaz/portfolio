@@ -1,4 +1,6 @@
-import React from "react";
+import { gsap, Power1 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -114,6 +116,44 @@ const Wrapper = styled.div`
 `;
 
 export const Projects: React.FC = () => {
+  const projectFirstRef = useRef<HTMLDivElement>(null);
+  const projectSecondRef = useRef<HTMLDivElement>(null);
+  const projectThirdRef = useRef<HTMLDivElement>(null);
+  const projectFourthRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(projectFirstRef.current, {
+      scrollTrigger: projectFirstRef.current,
+      duration: 2,
+      translateY: 200,
+      opacity: 0,
+      ease: Power1.easeInOut,
+    });
+
+    gsap.from(projectSecondRef.current, {
+      scrollTrigger: projectSecondRef.current,
+      duration: 2,
+      translateY: 200,
+      opacity: 0,
+      ease: Power1.easeInOut,
+    });
+    gsap.from(projectThirdRef.current, {
+      scrollTrigger: projectThirdRef.current,
+      duration: 2,
+      translateY: 200,
+      opacity: 0,
+      ease: Power1.easeInOut,
+    });
+    gsap.from(projectFourthRef.current, {
+      scrollTrigger: projectFourthRef.current,
+      duration: 2,
+      translateY: 200,
+      opacity: 0,
+      ease: Power1.easeInOut,
+    });
+  });
+
   return (
     <Wrapper>
       <div className="container-fluid">
@@ -133,7 +173,8 @@ export const Projects: React.FC = () => {
           <div className="col-lg-8"></div>
 
           <div
-            className="col-lg-4 project project1 wow fadeInUp"
+            ref={projectFirstRef}
+            className="col-lg-4 project project1"
             //   onClick={() => (location.href = "project.html")}
           ></div>
         </div>
@@ -142,6 +183,7 @@ export const Projects: React.FC = () => {
 
         <div className="row">
           <div
+            ref={projectSecondRef}
             className="col-lg-6 project project2 wow fadeInUp"
             //   onClick={() => (location.href = "project.html")}
           ></div>
@@ -155,6 +197,7 @@ export const Projects: React.FC = () => {
           <div className="col-lg-7"></div>
 
           <div
+            ref={projectThirdRef}
             className="col-lg-4 project project3 wow fadeInUp"
             //   onClick={() => (location.href = "project.html")}
           ></div>
@@ -168,6 +211,7 @@ export const Projects: React.FC = () => {
           <div className="col-lg-1"></div>
 
           <div
+            ref={projectFourthRef}
             className="col-lg-5 project project4 wow fadeInUp"
             //   onClick={() => (location.href = "project.html")}
           ></div>
