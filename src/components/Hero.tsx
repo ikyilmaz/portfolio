@@ -10,10 +10,14 @@ const HeroWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+  overflow-x: hidden;
 
   h1 {
     font-weight: lighter;
+    width: 100vw - 8em;
     text-align: center;
+    overflow: hidden;
     letter-spacing: -2px;
     line-height: 58px;
   }
@@ -21,55 +25,6 @@ const HeroWrapper = styled.div`
   @media (max-width: 768px) {
     .header h1 {
       font-size: 22px;
-    }
-  }
-`;
-
-// Header
-const Header = styled.div``;
-
-// Yazı yazma efekti veren animasyonum
-const typewriter = keyframes`
-    from {
-        width: 0;
-    }
-    to {
-        width: 16em;
-    }
-`;
-
-// işaretçinin yanıp sönme efekti
-const blinkTextCursor = keyframes`
-    from {
-      border-right-color: rgba(255, 255, 255, 0.75);
-    }
-    to {
-      border-right-color: transparent;
-    }
-`;
-
-// ekranın ortasında gözükecek olan yazı
-const Line = styled.h1`
-  width: 22em;
-  top: 50%;
-  margin: auto;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);
-
-  animation: ${typewriter} 4s steps(40) 1s 1 normal both,
-    ${blinkTextCursor} 500ms steps(40) infinite normal;
-
-  @media (max-width: 768px) {
-    @keyframes typewriter {
-      from {
-        width: 0;
-      }
-      to {
-        width: 17em;
-      }
     }
   }
 `;
@@ -109,7 +64,7 @@ const ScrollDown = styled.div`
   animation: ${fadeMoveDown} 3s cubic-bezier(0.19, 1, 0.22, 1) infinite;
 `;
 
-const LineDeneme = styled.h1`
+const Line = styled.h1`
   width: 22em;
   top: 50%;
   margin: auto;
@@ -168,13 +123,9 @@ export const Hero: React.FC = () => {
   return (
     <React.Fragment>
       <HeroWrapper className="hero">
-        <Header className="header">
-          {/* <Line className="line anim-typewriter">
-          </Line> */}
-          <LineDeneme ref={textRef} id="text">
-            {/* Yazılımsal şeyler yaparım */}
-          </LineDeneme>
-        </Header>
+        <div className="header">
+          <Line ref={textRef} id="text" />
+        </div>
       </HeroWrapper>
 
       <ScrollDown className="scroll-down"></ScrollDown>
