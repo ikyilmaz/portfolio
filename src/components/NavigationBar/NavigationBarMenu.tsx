@@ -58,6 +58,11 @@ export const NavigationBarMenu: React.FC = () => {
   return (
     <Menu ref={menuRef}>
       <li>
+        <a href="https://www.github.com/ikyilmaz" target={"_blank"}>
+          github<span>.</span>
+        </a>
+      </li>
+      <li>
         <Link to="/">
           anasayfa<span>.</span>
         </Link>
