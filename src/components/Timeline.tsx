@@ -62,6 +62,14 @@ const Wrapper = styled.div`
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
+
+  @media (max-width: 768px) {
+    width: 80vw;
+
+    .timeline-item {
+      font-size: 0.8em;
+    }
+  }
 `;
 
 export const Timeline: React.FC = () => {
