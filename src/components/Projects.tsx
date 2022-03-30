@@ -12,16 +12,16 @@ const Wrapper = styled.div`
     text-align: center;
   }
 
-  .vertical {
+  /* .vertical {
     margin-top: 40px;
     border-left: 1px solid #fff;
     height: 80px;
     position: absolute;
     left: 50%;
-  }
+  } */
 
   .project {
-    height: 500px;
+    height: 250px;
   }
 
   .project1 {
@@ -37,7 +37,6 @@ const Wrapper = styled.div`
     color: #fff;
     display: block;
     top: 8%;
-    left: -60%;
     right: 0;
     bottom: 0;
   }
@@ -55,7 +54,7 @@ const Wrapper = styled.div`
     color: #fff;
     display: block;
     top: 80%;
-    left: 90%;
+    left: 60%;
     right: 0;
     bottom: 0;
   }
@@ -73,7 +72,6 @@ const Wrapper = styled.div`
     color: #fff;
     display: block;
     top: 80%;
-    left: -50%;
     right: 0;
     bottom: 0;
   }
@@ -91,7 +89,7 @@ const Wrapper = styled.div`
     color: #fff;
     display: block;
     top: 10%;
-    left: 90%;
+    left: 65%;
     right: 0;
     bottom: 0;
   }
@@ -160,8 +158,6 @@ export const Projects: React.FC = () => {
         <br />
         <br />
         <br />
-
-        <h6>Selected projects</h6>
 
         <div className="vertical"></div>
         <br />
