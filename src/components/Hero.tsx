@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import { text } from "node:stream/consumers";
 
 // Hero Component
 const HeroWrapper = styled.div`
@@ -161,6 +162,8 @@ export const Hero: React.FC = () => {
       "Kesinlikle yazılımsal şeyler",
       "Full-Stack Web Developer",
     ];
+
+    texts.forEach(() => {});
     machineGun(texts, textRef);
   });
 
