@@ -1,4 +1,5 @@
-import React from "react";
+import { gsap, Expo } from "gsap";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -43,8 +44,19 @@ const Menu = styled.ul`
 `;
 
 export const NavigationBarMenu: React.FC = () => {
+  const menuRef = useRef<HTMLUListElement>(null);
+  const q = gsap.utils.selector(menuRef);
+
+  useEffect(() => {
+    gsap.from(q("li a"), {
+      stagger: 0.1,
+      opacity: 0,
+      ease: Expo.easeInOut,
+    });
+  });
+
   return (
-    <Menu>
+    <Menu ref={menuRef}>
       <li>
         <Link to="/">
           anasayfa<span>.</span>
