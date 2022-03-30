@@ -31,7 +31,7 @@ const typewriter = keyframes`
         width: 0;
     }
     to {
-        width: 18em;
+        width: 16em;
     }
 `;
 
