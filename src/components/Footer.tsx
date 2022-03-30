@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { landingFadeIn } from "../utils/fadeInUp";
 import { gsap, Cubic } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Wrapper = styled.div`
   .collab {
