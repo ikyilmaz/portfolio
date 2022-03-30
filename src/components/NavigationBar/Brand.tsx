@@ -1,4 +1,5 @@
-import React from "react";
+import { gsap, Expo } from "gsap";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -25,8 +26,21 @@ const StyledBrand = styled.span`
 `;
 
 export const Brand: React.FC = () => {
+  const brandRef = useRef<HTMLSpanElement>(null);
+
+  // Açılış Animasyonu
+  useEffect(() => {
+    gsap.from(brandRef.current, {
+      duration: 1,
+      // delay: 0.4,
+      y: 10,
+      opacity: 0,
+      ease: Expo.easeInOut,
+    });
+  });
+
   return (
-    <StyledBrand>
+    <StyledBrand ref={brandRef}>
       <Link to="/">ismail kurban yılmaz</Link>
     </StyledBrand>
   );
