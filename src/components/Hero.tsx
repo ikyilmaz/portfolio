@@ -82,6 +82,7 @@ const machineGun = (
     // repeat: -1,
     yoyo: false,
     repeatDelay: 0,
+    delay: 1.5,
     defaults: {
       onComplete: () => {
         if (textRef.current) textRef.current.innerText = "";
