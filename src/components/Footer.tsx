@@ -226,7 +226,7 @@ export const Footer: React.FC = () => {
             <div className="row">
               <div className="col-lg-12">
                 <p ref={quoteRef} className="wow fadeInUp">
-                  Got an interesting project? I can help you.
+                  İletişime geçelim!
                 </p>
               </div>
             </div>
@@ -245,9 +245,9 @@ export const Footer: React.FC = () => {
             <div className="row">
               <div className="col-lg-4" id="personal">
                 <p ref={connectWithRef} className="wow fadeInUp">
-                  connect with me
+                  bağlantı kur
                 </p>
-                <h4 ref={usernameRef}>ig @ikyilmaz</h4>
+                <h4 ref={usernameRef}>@ikyilmaz</h4>
                 <br />
                 <br />
               </div>
@@ -258,7 +258,7 @@ export const Footer: React.FC = () => {
                   className="wow fadeInUp"
                   data-wow-delay="0s"
                 >
-                  follow me
+                  takipleşelim
                 </p>
 
                 <ul>
@@ -307,7 +307,7 @@ export const Footer: React.FC = () => {
                   className="wow fadeInUp"
                   data-wow-delay="0s"
                 >
-                  say hello
+                  merhaba de
                 </p>
                 <h4
                   ref={mailRef}
