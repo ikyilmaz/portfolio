@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import { landingFadeIn } from "../utils/fadeInUp";
+import { gsap, Cubic } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Wrapper = styled.div`
   .collab {
@@ -102,6 +105,59 @@ const Wrapper = styled.div`
 `;
 
 export const Footer: React.FC = () => {
+  const quoteRef = useRef<HTMLParagraphElement>(null);
+  const connectWithRef = useRef<HTMLParagraphElement>(null);
+  const usernameRef = useRef<HTMLHeadingElement>(null);
+  const followMeRef = useRef<HTMLParagraphElement>(null);
+  const socialFbRef = useRef<HTMLLIElement>(null);
+  const socialIgRef = useRef<HTMLLIElement>(null);
+  const socialYtRef = useRef<HTMLLIElement>(null);
+  const socialTwRef = useRef<HTMLLIElement>(null);
+  const sayHelloRef = useRef<HTMLParagraphElement>(null);
+  const mailRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    landingFadeIn(quoteRef);
+    landingFadeIn(connectWithRef, 0.2);
+    landingFadeIn(usernameRef, 0.4);
+    landingFadeIn(followMeRef, 0.2);
+
+    gsap.from(socialFbRef.current, {
+      scrollTrigger: socialFbRef.current,
+      duration: 1,
+      transform: "translateY(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+      delay: 0.5,
+    });
+    gsap.from(socialIgRef.current, {
+      scrollTrigger: socialIgRef.current,
+      duration: 1,
+      transform: "translateY(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+      delay: 0.6,
+    });
+    gsap.from(socialYtRef.current, {
+      scrollTrigger: socialYtRef.current,
+      duration: 1,
+      transform: "translateY(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+      delay: 0.7,
+    });
+    gsap.from(socialTwRef.current, {
+      scrollTrigger: socialTwRef.current,
+      duration: 1,
+      transform: "translateY(-100px)",
+      opacity: 0,
+      ease: Cubic.easeInOut,
+      delay: 0.8,
+    });
+    landingFadeIn(sayHelloRef, 0.2);
+    landingFadeIn(mailRef, 0.4);
+  });
+
   return (
     <Wrapper>
       <div className="footer">
@@ -112,7 +168,7 @@ export const Footer: React.FC = () => {
           <div className="collab">
             <div className="row">
               <div className="col-lg-12">
-                <p className="wow fadeInUp">
+                <p ref={quoteRef} className="wow fadeInUp">
                   Got an interesting project? I can help you.
                 </p>
               </div>
@@ -131,31 +187,56 @@ export const Footer: React.FC = () => {
           <div className="info">
             <div className="row">
               <div className="col-lg-4" id="personal">
-                <p className="wow fadeInUp">connect with me</p>
-                <h4 className="wow fadeInUp" data-wow-delay="0.2s">
-                  ig @ikyilmaz
-                </h4>
+                <p ref={connectWithRef} className="wow fadeInUp">
+                  connect with me
+                </p>
+                <h4 ref={usernameRef}>ig @ikyilmaz</h4>
                 <br />
                 <br />
               </div>
 
               <div className="col-lg-4" id="media">
-                <p className="wow fadeInUp" data-wow-delay="0s">
+                <p
+                  ref={followMeRef}
+                  className="wow fadeInUp"
+                  data-wow-delay="0s"
+                >
                   follow me
                 </p>
 
                 <ul>
-                  <li id="fb" className="wow fadeInUp" data-wow-delay="0.4s">
+                  <li
+                    ref={socialFbRef}
+                    id="fb"
+                    className="wow fadeInUp"
+                    data-wow-delay="0.4s"
+                  >
                     fb
                   </li>
-                  <li id="ig" className="wow fadeInUp" data-wow-delay="0.6s">
+                  <li
+                    ref={socialIgRef}
+                    id="ig"
+                    className="wow fadeInUp"
+                    data-wow-delay="0.6s"
+                  >
                     ig
                   </li>
-                  <li id="tw" className="wow fadeInUp" data-wow-delay="0.8s">
-                    tw
-                  </li>
-                  <li id="yt" className="wow fadeInUp" data-wow-delay="1s">
+
+                  <li
+                    ref={socialYtRef}
+                    id="yt"
+                    className="wow fadeInUp"
+                    data-wow-delay="1s"
+                  >
                     yt
+                  </li>
+                  <li
+                    ref={socialTwRef}
+                    id="tw"
+                    className="wow fadeInUp"
+                    data-wow-delay="0.8s"
+                  >
+                    tw
                   </li>
                 </ul>
 
@@ -164,10 +245,18 @@ export const Footer: React.FC = () => {
               </div>
 
               <div className="col-lg-4" id="address">
-                <p className="wow fadeInUp" data-wow-delay="0s">
+                <p
+                  ref={sayHelloRef}
+                  className="wow fadeInUp"
+                  data-wow-delay="0s"
+                >
                   say hello
                 </p>
-                <h4 className="wow fadeInUp" data-wow-delay="0.2s">
+                <h4
+                  ref={mailRef}
+                  className="wow fadeInUp"
+                  data-wow-delay="0.2s"
+                >
                   ismailkurbanyilmaz@gmail.com
                 </h4>
                 <br />
