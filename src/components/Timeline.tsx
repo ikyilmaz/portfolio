@@ -98,7 +98,7 @@ export const Timeline: React.FC = () => {
           ağırlıklı olarak <b>NodeJS</b> üzerinde geliştirmeler yaptım. NodeJS
           kullanırken de <b>NestJS</b> ve <b>ExpressJS</b> kütüphanelerinden
           yararlandım. Veritabanı olarak <b>PostgreSQL</b>, <b>MySQL</b>,{" "}
-          <b>MongoDB</b> ve <b>Redis</b> kullanmayı amaçladım. ORM olarak{" "}
+          <b>MongoDB</b> ve <b>Redis</b> kullanmayı amaçladım. ORM/ODM olarak{" "}
           <b>Sequelize</b>, <b>typeorm</b> ve <b>mongoose</b> kullanmayı
           öğrendim. <b>GoLang</b>'e merak salıp, öğrendim. <b>Gin</b> ve{" "}
           <b>gofiber</b> kütüphanelerini kullanarak back-end yazılımlar
