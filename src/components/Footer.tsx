@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { gsap, Cubic } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Wrapper = styled.div`
   .collab {
@@ -120,6 +121,8 @@ export const Footer: React.FC = () => {
     // Buradaki her bir animasyon ilgili element viewporta girdiği an çalışacak...
 
     // Proje soru kısmının giriş animasyonu...
+    gsap.registerPlugin(ScrollTrigger);
+
     gsap.from(quoteRef.current, {
       scrollTrigger: quoteRef.current,
       duration: 1,
