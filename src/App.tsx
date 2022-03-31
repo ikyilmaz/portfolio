@@ -1,12 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import styled, { createGlobalStyle } from "styled-components";
-import { NavigationBar } from "./components/NavigationBar/NavigationBar";
-import { Hero } from "./components/Hero";
-import { Projects } from "./components/Projects";
-import { Footer } from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
+import { AboutPage } from "./pages/AboutPage";
+import { ContactPage } from "./pages/ContactPage";
 
 const Wrapper = styled.div``;
 
@@ -43,8 +41,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/work" element={<h3>iş.</h3>} />
-          <Route path="/about-me" element={<h3>benden biraz.</h3>} />
-          <Route path="/contact" element={<h3>iletişim.</h3>} />
+          <Route path="/about-me" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Router>
     </React.Fragment>
