@@ -2,6 +2,7 @@ import { gsap, Expo } from "gsap";
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { fadeIn } from "../../shared/utils";
 
 const StyledBrand = styled.span`
   float: left;
@@ -30,13 +31,7 @@ export const Brand: React.FC = () => {
 
   // Açılış Animasyonu
   useEffect(() => {
-    gsap.from(brandRef.current, {
-      duration: 1,
-      // delay: 0.4,
-      y: 10,
-      opacity: 0,
-      ease: Expo.easeInOut,
-    });
+    fadeIn({ elRefs: [brandRef], from: "top" });
   });
 
   return (
