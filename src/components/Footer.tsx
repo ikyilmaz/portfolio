@@ -13,11 +13,6 @@ const Wrapper = styled.div`
     margin-bottom: 20px;
   }
 
-  .hr {
-    background: rgba(255, 255, 255, 0.2);
-    height: 1px;
-  }
-
   .info h4 {
     font-size: 18px;
     font-weight: lighter;
