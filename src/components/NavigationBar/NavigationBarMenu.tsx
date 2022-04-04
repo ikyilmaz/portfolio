@@ -31,6 +31,8 @@ const Menu = styled.ul`
     color: #fff;
     text-decoration: none;
     font-size: 26px;
+    height: 100%;
+    width: 100%;
   }
 
   @media (max-width: 768px) {
