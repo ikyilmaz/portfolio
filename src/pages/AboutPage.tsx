@@ -18,12 +18,16 @@ const Wrapper = styled.div`
 `;
 
 export const AboutPage: React.FC = () => {
+  const imageHeadingRef = useRef<HTMLHeadingElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Anlam veremedim ama düzelteceğiz
+    window.scrollTo({ top: 0 });
+
     fadeIn({
-      elRefs: [imageRef, timelineRef],
+      elRefs: [imageHeadingRef, imageRef, timelineRef],
       from: "bottom",
       stagger: 0.3,
     });
@@ -36,7 +40,9 @@ export const AboutPage: React.FC = () => {
         <div className="whitespace"></div>
         <div className="container">
           <div className="row">
-            <h3 className="text-center mt-3 mb-5">bir fotoğrafım.</h3>
+            <h3 className="text-center mt-3 mb-5" ref={imageHeadingRef}>
+              bir fotoğrafım.
+            </h3>
             <div className="col-lg-12 about image" ref={imageRef} />
           </div>
         </div>
