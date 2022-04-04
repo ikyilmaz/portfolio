@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Footer } from "../components/Footer";
 import { NavigationBar } from "../components/NavigationBar/NavigationBar";
+import { fadeIn } from "../shared/utils";
 
 const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* .container {
+    width: 250px;
+  } */
+
   #contact-form {
     margin: 5% 1.4%;
   }
@@ -99,87 +108,97 @@ const Wrapper = styled.div`
 `;
 
 export const ContactPage: React.FC = () => {
+  const sayHelloRef = useRef<HTMLHeadingElement>(null);
+  const headingRef = useRef<HTMLParagraphElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    fadeIn({ elRefs: [sayHelloRef, headingRef, formRef], stagger: 0.2 });
+  });
+
   return (
     <React.Fragment>
       <NavigationBar />
       <Wrapper className="wrapper">
-        <div className="whitespace"></div>
+        <div>
+          <div className="container mt-5 mb-5">
+            <div className="hero-content">
+              <div>
+                <div>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
 
-        <div className="container">
-          <div className="hero-content">
-            <div className="row">
-              <div className="col-lg-8">
-                <br />
-                <br />
-                <br />
-                <br />
-
-                <h3>merhaba de 👋</h3>
-                <br />
-                <p className="">
-                  Görüşmek istediğiniz herhangi bir konu var ise aşağıdan bana
-                  mesaj atabilirsiniz!
-                </p>
+                  <h3 className="text-center" ref={sayHelloRef}>
+                    merhaba de 👋
+                  </h3>
+                  <br />
+                  <p ref={headingRef}>
+                    Görüşmek istediğiniz herhangi bir konu var ise aşağıdan bana
+                    mesaj atabilirsiniz!
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              <form
-                name="contact-form"
-                id="contact-form"
-                method="post"
-                action=""
-              >
-                <ul>
-                  <li>
-                    <label>İsim :</label>
-                    <div className="textarea">
-                      <input
-                        type="text"
-                        name="contact-name"
-                        id="contact-name"
-                        required
-                      />
-                    </div>
-                  </li>
-
-                  <li>
-                    <label>E-Posta :</label>
-                    <div className="textarea">
-                      <input
-                        type="email"
-                        name="contact-email"
-                        id="contact-email"
-                        required
-                      />
-                    </div>
-                  </li>
-
-                  <li>
-                    <label>Mesaj :</label>
-                    <div className="textarea">
-                      <textarea
-                        name="contact-project"
-                        id="contact-project"
-                        required
-                      ></textarea>
-                    </div>
-                  </li>
-                </ul>
-
-                <button
-                  type="submit"
-                  name="contact-submit"
-                  id="contact-submit"
-                  className="send"
+          <div className="container">
+            <div>
+              <div>
+                <form
+                  ref={formRef}
+                  name="contact-form"
+                  id="contact-form"
+                  method="post"
+                  action=""
                 >
-                  Gönder mesajı
-                </button>
-              </form>
+                  <ul>
+                    <li>
+                      <label>İsim :</label>
+                      <div className="textarea">
+                        <input
+                          type="text"
+                          name="contact-name"
+                          id="contact-name"
+                          required
+                        />
+                      </div>
+                    </li>
+
+                    <li>
+                      <label>E-Posta :</label>
+                      <div className="textarea">
+                        <input
+                          type="email"
+                          name="contact-email"
+                          id="contact-email"
+                          required
+                        />
+                      </div>
+                    </li>
+
+                    <li>
+                      <label>Mesaj :</label>
+                      <div className="textarea">
+                        <textarea
+                          name="contact-project"
+                          id="contact-project"
+                          required
+                        ></textarea>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <button
+                    type="submit"
+                    name="contact-submit"
+                    id="contact-submit"
+                    className="send"
+                  >
+                    Gönder mesajı
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
