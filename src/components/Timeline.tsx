@@ -75,7 +75,7 @@ const Wrapper = styled.div`
 export const Timeline: React.FC = () => {
   return (
     <React.Fragment>
-      <h4 style={{ textAlign: "center", marginBottom: 30 }}>Kısaca ben</h4>
+      <h4 style={{ textAlign: "center", marginBottom: 30 }}>kısaca ben.</h4>
       <Wrapper>
         <p className="timeline-item">
           <span>
