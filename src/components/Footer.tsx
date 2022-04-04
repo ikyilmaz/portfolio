@@ -101,6 +101,11 @@ const Wrapper = styled.div`
       padding: 0;
     }
   }
+
+  .social-link {
+    text-decoration: none;
+    color: white;
+  }
 `;
 
 export const Footer: React.FC = () => {
@@ -226,9 +231,7 @@ export const Footer: React.FC = () => {
           <div className="collab">
             <div className="row">
               <div className="col-lg-12">
-                <p ref={quoteRef} className="wow fadeInUp">
-                  İletişime geçelim!
-                </p>
+                <p ref={quoteRef}>İletişime geçelim!</p>
               </div>
             </div>
           </div>
@@ -245,56 +248,53 @@ export const Footer: React.FC = () => {
           <div className="info">
             <div className="row">
               <div className="col-lg-4" id="personal">
-                <p ref={connectWithRef} className="wow fadeInUp">
-                  bağlantı kur
-                </p>
+                <p ref={connectWithRef}>bağlantı kur</p>
                 <h4 ref={usernameRef}>@ikyilmaz</h4>
                 <br />
                 <br />
               </div>
 
               <div className="col-lg-4" id="media">
-                <p
-                  ref={followMeRef}
-                  className="wow fadeInUp"
-                  data-wow-delay="0s"
-                >
-                  takipleşelim
-                </p>
+                <p ref={followMeRef}>takipleşelim</p>
 
                 <ul>
-                  <li
-                    ref={socialFbRef}
-                    id="fb"
-                    className="wow fadeInUp"
-                    data-wow-delay="0.4s"
-                  >
-                    fb
-                  </li>
-                  <li
-                    ref={socialIgRef}
-                    id="ig"
-                    className="wow fadeInUp"
-                    data-wow-delay="0.6s"
-                  >
-                    ig
+                  <li ref={socialFbRef} id="fb">
+                    <a
+                      className="social-link"
+                      href="https://linkedin.com/in/ikyilmaz"
+                      target={"_blank"}
+                    >
+                      linkedin
+                    </a>
                   </li>
 
-                  <li
-                    ref={socialYtRef}
-                    id="yt"
-                    className="wow fadeInUp"
-                    data-wow-delay="1s"
-                  >
-                    yt
+                  <li ref={socialIgRef} id="ig">
+                    <a
+                      className="social-link"
+                      href="https://instagram.com/ikyilmaz"
+                      target={"_blank"}
+                    >
+                      ig
+                    </a>
                   </li>
-                  <li
-                    ref={socialTwRef}
-                    id="tw"
-                    className="wow fadeInUp"
-                    data-wow-delay="0.8s"
-                  >
-                    tw
+
+                  <li ref={socialYtRef} id="yt">
+                    <a
+                      className="social-link"
+                      href="https://github.com/ikyilmaz"
+                      target={"_blank"}
+                    >
+                      github
+                    </a>
+                  </li>
+                  <li ref={socialTwRef} id="tw">
+                    <a
+                      className="social-link"
+                      href="https://twitter.com/ikyilmaz"
+                      target={"_blank"}
+                    >
+                      tw
+                    </a>
                   </li>
                 </ul>
 
@@ -303,20 +303,8 @@ export const Footer: React.FC = () => {
               </div>
 
               <div className="col-lg-4" id="address">
-                <p
-                  ref={sayHelloRef}
-                  className="wow fadeInUp"
-                  data-wow-delay="0s"
-                >
-                  merhaba de
-                </p>
-                <h4
-                  ref={mailRef}
-                  className="wow fadeInUp"
-                  data-wow-delay="0.2s"
-                >
-                  ismailkurbanyilmaz@gmail.com
-                </h4>
+                <p ref={sayHelloRef}>merhaba de</p>
+                <h4 ref={mailRef}>ismailkurbanyilmaz@gmail.com</h4>
                 <br />
                 <br />
               </div>
