@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     list-style: none;
     border-radius: 5px;
     margin-bottom: 40px;
-    margin-left: 0px;
+    /* padding-left: 0px; */
   }
 
   #contact-form li {
@@ -56,24 +56,44 @@ const Wrapper = styled.div`
   }
 
   .send {
-    margin-left: 50px;
+    position: relative;
+    float: right;
     text-transform: uppercase;
     padding: 20px 30px;
     background: transparent;
     color: #dfdfdf;
     font-size: 14px;
     letter-spacing: 2px;
-  }
+    border: 0px;
 
-  .send:hover {
-    background: #dfdfdf;
-    color: #101010;
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 5px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: 0.3s;
+    }
   }
 
   @media (max-width: 768px) {
     #contact-form {
-      margin: 5% -8%;
+      margin: 5% -10%;
       width: 98%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-content {
+      margin-left: 25px;
     }
   }
 `;
@@ -87,20 +107,18 @@ export const ContactPage: React.FC = () => {
 
         <div className="container">
           <div className="hero-content">
-            <br />
-            <br />
-
             <div className="row">
               <div className="col-lg-8">
-                <h3 data-wow-delay="1s">say hello 👋</h3>
                 <br />
-                <p data-wow-delay="1.2s">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Neque, accusantium sint quod voluptatem dolorum, quaerat, ut
-                  iusto cumque magni ab repudiandae, quasi minus unde temporibus
-                  nulla eum eaque! Placeat praesentium sunt suscipit laboriosam
-                  deserunt commodi atque corporis, iure maiores dicta, fugit
-                  similique.
+                <br />
+                <br />
+                <br />
+
+                <h3>merhaba de 👋</h3>
+                <br />
+                <p className="">
+                  Görüşmek istediğiniz herhangi bir konu var ise aşağıdan bana
+                  mesaj atabilirsiniz!
                 </p>
               </div>
             </div>
@@ -117,8 +135,8 @@ export const ContactPage: React.FC = () => {
                 action=""
               >
                 <ul>
-                  <li data-wow-delay="1.4s">
-                    <label>Name :</label>
+                  <li>
+                    <label>İsim :</label>
                     <div className="textarea">
                       <input
                         type="text"
@@ -129,8 +147,8 @@ export const ContactPage: React.FC = () => {
                     </div>
                   </li>
 
-                  <li data-wow-delay="1.6s">
-                    <label>Email :</label>
+                  <li>
+                    <label>E-Posta :</label>
                     <div className="textarea">
                       <input
                         type="email"
@@ -141,8 +159,8 @@ export const ContactPage: React.FC = () => {
                     </div>
                   </li>
 
-                  <li data-wow-delay="1.6s">
-                    <label>Message :</label>
+                  <li>
+                    <label>Mesaj :</label>
                     <div className="textarea">
                       <textarea
                         name="contact-project"
@@ -157,9 +175,9 @@ export const ContactPage: React.FC = () => {
                   type="submit"
                   name="contact-submit"
                   id="contact-submit"
-                  className="send wow fadeInUp"
+                  className="send"
                 >
-                  Send Message
+                  Gönder mesajı
                 </button>
               </form>
             </div>
