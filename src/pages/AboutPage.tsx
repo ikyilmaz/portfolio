@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Footer } from "../components/Footer";
 import { NavigationBar } from "../components/NavigationBar/NavigationBar";
 import { Timeline } from "../components/Timeline";
 import ben from "../img/ben.jpeg";
+import { fadeIn } from "../shared/utils";
 
 const Wrapper = styled.div`
   .about {
     height: 500px;
-    margin-top: 120px;
   }
 
   .image {
@@ -18,6 +18,17 @@ const Wrapper = styled.div`
 `;
 
 export const AboutPage: React.FC = () => {
+  const imageRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    fadeIn({
+      elRefs: [imageRef, timelineRef],
+      from: "bottom",
+      stagger: 0.3,
+    });
+  });
+
   return (
     <React.Fragment>
       <NavigationBar />
@@ -25,14 +36,12 @@ export const AboutPage: React.FC = () => {
         <div className="whitespace"></div>
         <div className="container">
           <div className="row">
-            <div
-              className="col-lg-12 about image wow fadeInUp"
-              data-wow-delay="1s"
-            ></div>
+            <h3 className="text-center mt-3 mb-5">bir fotoğrafım.</h3>
+            <div className="col-lg-12 about image" ref={imageRef} />
           </div>
         </div>
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content" ref={timelineRef}>
             <br />
 
             <div className="row">
