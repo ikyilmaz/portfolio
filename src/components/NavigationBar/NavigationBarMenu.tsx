@@ -1,4 +1,3 @@
-import { gsap, Expo } from "gsap";
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -68,6 +67,7 @@ export const NavigationBarMenu: React.FC = () => {
           ref={githubLinkRef}
           href="https://www.github.com/ikyilmaz"
           target={"_blank"}
+          rel="noreferrer"
         >
           github<span>.</span>
         </a>
