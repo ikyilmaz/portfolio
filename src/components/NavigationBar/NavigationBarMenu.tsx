@@ -2,6 +2,7 @@ import { gsap, Expo } from "gsap";
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { fadeIn } from "../../shared/utils";
 
 const Menu = styled.ul`
   float: left;
@@ -46,36 +47,43 @@ const Menu = styled.ul`
 `;
 
 export const NavigationBarMenu: React.FC = () => {
-  const menuRef = useRef<HTMLUListElement>(null);
-  const q = gsap.utils.selector(menuRef);
+  const githubLinkRef = useRef<HTMLAnchorElement>(null);
+  const homeLinkRef = useRef<HTMLAnchorElement>(null);
+  const aboutLinkRef = useRef<HTMLAnchorElement>(null);
+  const contactLinkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
-    gsap.from(q("li a"), {
+    fadeIn({
+      elRefs: [githubLinkRef, homeLinkRef, aboutLinkRef, contactLinkRef],
+      from: "top",
       stagger: 0.1,
-      opacity: 0,
-      ease: Expo.easeInOut,
     });
   });
 
   return (
-    <Menu ref={menuRef}>
+    <Menu>
       <li>
-        <a href="https://www.github.com/ikyilmaz" target={"_blank"}>
+        <a
+          style={{ display: "block" }}
+          ref={githubLinkRef}
+          href="https://www.github.com/ikyilmaz"
+          target={"_blank"}
+        >
           github<span>.</span>
         </a>
       </li>
       <li>
-        <Link to="/">
+        <Link style={{ display: "block" }} ref={homeLinkRef} to="/">
           anasayfa<span>.</span>
         </Link>
       </li>
       <li>
-        <Link to="/about-me">
+        <Link style={{ display: "block" }} ref={aboutLinkRef} to="/about-me">
           biraz benden<span>.</span>
         </Link>
       </li>
       <li>
-        <Link to="/contact">
+        <Link style={{ display: "block" }} ref={contactLinkRef} to="/contact">
           iletişim<span>.</span>
         </Link>
       </li>
