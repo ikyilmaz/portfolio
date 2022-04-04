@@ -94,11 +94,6 @@ export const NavigationBarResize: React.FC<NavigationBarResizeProps> = ({
           </Link>
         </li>
         <li>
-          <Link to="/work">
-            iş<span>.</span>
-          </Link>
-        </li>
-        <li>
           <Link to="/about-me">
             biraz benden<span>.</span>
           </Link>

@@ -68,11 +68,6 @@ export const NavigationBarMenu: React.FC = () => {
         </Link>
       </li>
       <li>
-        <Link to="/work">
-          iş<span>.</span>
-        </Link>
-      </li>
-      <li>
         <Link to="/about-me">
           biraz benden<span>.</span>
         </Link>
