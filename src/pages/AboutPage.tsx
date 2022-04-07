@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Footer } from "../components/Footer";
-import { NavigationBar } from "../components/NavigationBar/NavigationBar";
+import { AnimatedNav } from "../components/NavigationBar/AnimatedNav";
 import { Timeline } from "../components/Timeline";
 import ben from "../img/ben.jpeg";
 import { fadeIn } from "../shared/utils";
@@ -35,7 +35,7 @@ export const AboutPage: React.FC = () => {
 
   return (
     <React.Fragment>
-      <NavigationBar />
+      <AnimatedNav />
       <Wrapper className="wrapper">
         <div className="whitespace"></div>
         <div className="container">

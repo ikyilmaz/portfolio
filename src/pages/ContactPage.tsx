@@ -1,17 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Footer } from "../components/Footer";
-import { NavigationBar } from "../components/NavigationBar/NavigationBar";
+import { AnimatedNav } from "../components/NavigationBar/AnimatedNav";
 import { fadeIn } from "../shared/utils";
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* .container {
-    width: 250px;
-  } */
 
   #contact-form {
     margin: 5% 1.4%;
@@ -118,7 +114,7 @@ export const ContactPage: React.FC = () => {
 
   return (
     <React.Fragment>
-      <NavigationBar />
+      <AnimatedNav />
       <Wrapper className="wrapper">
         <div>
           <div className="container mt-5 mb-5">
