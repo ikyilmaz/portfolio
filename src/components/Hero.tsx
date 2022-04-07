@@ -72,6 +72,7 @@ const Line = styled.h1`
   white-space: nowrap;
   overflow: hidden;
   transform: translateY(-50%);
+  z-index: 1;
 `;
 
 const machineGun = (
@@ -95,6 +96,7 @@ const machineGun = (
       duration: text.length / 10,
       text,
       reversed: false,
+      zIndex: 0,
       onComplete() {
         if ("Full-Stack Web Developer" === text) tl.pause();
       },
