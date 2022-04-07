@@ -32,7 +32,7 @@ export const Brand: React.FC = () => {
   // Açılış Animasyonu
   useEffect(() => {
     fadeIn({ elRefs: [brandRef], from: "top" });
-  });
+  }, []);
 
   return (
     <StyledBrand ref={brandRef}>
