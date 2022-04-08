@@ -5,9 +5,15 @@ type FadeInOpts = {
   elRefs: React.RefObject<HTMLElement>[];
   from?: string;
   stagger?: number;
+  delay?: number;
 };
 
-export const fadeIn = ({ elRefs, from = "left", stagger }: FadeInOpts) => {
+export const fadeIn = ({
+  elRefs,
+  from = "left",
+  stagger,
+  delay,
+}: FadeInOpts) => {
   const els = elRefs.map((el) => el.current);
 
   gsap.from(els, {
@@ -25,5 +31,6 @@ export const fadeIn = ({ elRefs, from = "left", stagger }: FadeInOpts) => {
     opacity: 0,
     stagger,
     ease: Cubic.easeInOut,
+    delay,
   });
 };
