@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Footer } from "../components/Footer";
 import { AnimatedNav } from "../components/NavigationBar/AnimatedNav";
+import { Reveal } from "../components/Reveal";
 import { Timeline } from "../components/Timeline";
 import ben from "../img/ben.jpeg";
 import { fadeIn } from "../shared/utils";
@@ -23,18 +24,17 @@ export const AboutPage: React.FC = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Anlam veremedim ama düzelteceğiz
-    window.scrollTo({ top: 0 });
-
     fadeIn({
       elRefs: [imageHeadingRef, imageRef, timelineRef],
       from: "bottom",
       stagger: 0.3,
+      delay: 0.7,
     });
   });
 
   return (
     <React.Fragment>
+      <Reveal />
       <AnimatedNav />
       <Wrapper className="wrapper">
         <div className="whitespace"></div>

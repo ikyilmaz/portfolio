@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer";
 import { Hero } from "../components/Hero";
 import { Projects } from "../components/Projects";
 import { Timeline } from "../components/Timeline";
+import { Reveal } from "../components/Reveal";
 
 export const HomePage: React.FC = () => {
   useEffect(() => {
@@ -12,6 +13,7 @@ export const HomePage: React.FC = () => {
   });
   return (
     <React.Fragment>
+      <Reveal />
       <AnimatedNav />
       <Hero />
       <Timeline />

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Footer } from "../components/Footer";
 import { AnimatedNav } from "../components/NavigationBar/AnimatedNav";
+import { Reveal } from "../components/Reveal";
 import { fadeIn } from "../shared/utils";
 
 const Wrapper = styled.div`
@@ -114,6 +115,7 @@ export const ContactPage: React.FC = () => {
 
   return (
     <React.Fragment>
+      <Reveal />
       <AnimatedNav />
       <Wrapper className="wrapper">
         <div>
