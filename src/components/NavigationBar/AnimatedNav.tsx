@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Brand } from "./Brand";
 import { FiMenu } from "react-icons/fi";
+import { Link, useLocation, useNavigate, useRoutes } from "react-router-dom";
 
 const NavWrapper = styled.div`
   div {
@@ -67,15 +68,17 @@ const NavList = styled.ul`
 `;
 
 const NavListItem = styled.li`
-  color: crimson;
+  color: ${(props) => props.theme.white};
   font-size: 100px;
   position: relative;
+  cursor: pointer;
 
   a {
     display: block;
     color: ${(props) => props.theme.white};
     position: relative;
     text-decoration: none;
+    opacity: 0;
 
     &::after {
       content: "";
@@ -97,7 +100,8 @@ const NavListItem = styled.li`
 `;
 
 export const AnimatedNav: React.FC = () => {
-  const [reversed, setReversed] = useState(false);
+  const [reversed, setReversed] = useState(true);
+  const [bye, setBye] = useState({ to: "", bye: false });
 
   const firstLayerRef = useRef<HTMLDivElement>(null);
   const secondLayerRef = useRef<HTMLDivElement>(null);
@@ -105,6 +109,9 @@ export const AnimatedNav: React.FC = () => {
   const navListSelector = gsap.utils.selector(navListRef);
 
   const tl = useRef<gsap.core.Timeline>(gsap.timeline());
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     tl.current.to([firstLayerRef.current, secondLayerRef.current], {
@@ -139,17 +146,37 @@ export const AnimatedNav: React.FC = () => {
     setReversed(!reversed);
   };
 
+  useEffect(() => {
+    if (bye.bye) {
+      tl.current.to(navListSelector("li a"), {
+        y: 200,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "Expo.easeInOut",
+        onComplete: () => {
+          navigate(bye.to);
+        },
+      });
+    }
+  }, [bye]);
+
+  const toggleBye = (to: string) => {
+    if (location.pathname === to) return;
+    setBye({ to, bye: true });
+  };
+
   return (
     <React.Fragment>
       <NavList ref={navListRef}>
         <NavListItem>
-          <a href="">Selamlar</a>
+          <a onClick={() => toggleBye("/")}>anasayfa.</a>
         </NavListItem>
         <NavListItem>
-          <a href="">Agalar</a>
+          <a onClick={() => toggleBye("/about-me")}>biraz benden.</a>
         </NavListItem>
         <NavListItem>
-          <a href="">Yaşıyoruz</a>
+          <a onClick={() => toggleBye("/contact")}>iletişim.</a>
         </NavListItem>
       </NavList>
       <NavWrapper>
