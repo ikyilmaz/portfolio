@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Brand } from "./Brand";
 import { FiMenu } from "react-icons/fi";
-import { Link, useLocation, useNavigate, useRoutes } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const NavWrapper = styled.div`
   div {
@@ -79,6 +79,13 @@ const NavListItem = styled.li`
     position: relative;
     text-decoration: none;
     opacity: 0;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
 
     &::after {
       content: "";
